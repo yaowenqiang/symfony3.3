@@ -27,7 +27,15 @@ class GenusController extends Controller
 //            'name' => $genusName
 //        ]);
 //        return new Response($html);
-        return $this->render('genus/show.html.twig',['name'=>$genusName]);
+        $notes = [
+            "Octopus asked me a riddle,outsmarted me",
+            'I counted 8 legs...as they wrapped around me',
+            'Inked!'
+        ];
+        return $this->render('genus/show.html.twig',[
+            'notes'=>$notes,
+            'name'=>$genusName
+        ]);
 //        return new  Response("The Genus: ".$genusName);
     }
 }

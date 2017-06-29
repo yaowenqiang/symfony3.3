@@ -2,6 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="131e9961-58df-48b4-a708-e01a61fcecd0" name="Default" comment="">
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Resources/views/genus/show.html.twig" afterPath="$PROJECT_DIR$/app/Resources/views/genus/show.html.twig" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/AppBundle/Controller/GenusController.php" afterPath="$PROJECT_DIR$/src/AppBundle/Controller/GenusController.php" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -13,15 +14,12 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="GenusController.php" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/AppBundle/Controller/GenusController.php">
+      <file leaf-file-name="show.html.twig" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/app/Resources/views/genus/show.html.twig">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="527">
-              <caret line="28" column="36" lean-forward="false" selection-start-line="28" selection-start-column="36" selection-end-line="28" selection-end-column="36" />
-              <folding>
-                <element signature="e#124#183#0#PHP" expanded="true" />
-                <element signature="e#808#830#0#PHP" expanded="true" />
-              </folding>
+            <state relative-caret-position="62">
+              <caret line="2" column="3" lean-forward="false" selection-start-line="2" selection-start-column="3" selection-end-line="2" selection-end-column="3" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -34,8 +32,8 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/app/Resources/views/genus/show.html.twig" />
         <option value="$PROJECT_DIR$/src/AppBundle/Controller/GenusController.php" />
+        <option value="$PROJECT_DIR$/app/Resources/views/genus/show.html.twig" />
       </list>
     </option>
   </component>
@@ -246,12 +244,12 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1498669409663</updated>
-      <workItem from="1498669613594" duration="2492000" />
+      <workItem from="1498669613594" duration="3119000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="2492000" />
+    <option name="totallyTimeSpent" value="3119000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="0" width="1920" height="1080" extended-state="6" />
@@ -287,22 +285,104 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/app/Resources/views/genus/show.html.twig">
+    <entry file="file://$PROJECT_DIR$/vendor/symfony/symfony/src/Symfony/Bundle/FrameworkBundle/Controller/ControllerTrait.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="12" lean-forward="false" selection-start-line="0" selection-start-column="12" selection-end-line="0" selection-end-column="12" />
-          <folding />
+        <state relative-caret-position="236">
+          <caret line="230" column="0" lean-forward="false" selection-start-line="230" selection-start-column="0" selection-end-line="230" selection-end-column="4" />
+          <folding>
+            <marker date="1496721614000" expanded="false" signature="9:234" ph="..." />
+            <marker date="1496721614000" expanded="false" signature="296:1124" ph="..." />
+            <marker date="1496721614000" expanded="true" signature="1129:1287" ph=" Common features needed in controllers. ..." />
+            <marker date="1496721614000" expanded="true" signature="1311:13978" ph="{...}" />
+            <marker date="1496721614000" expanded="true" signature="1321:1695" ph=" Generates a URL from the given parameters. ..." />
+            <marker date="1496721614000" expanded="true" signature="1818:1925" ph="{...}" />
+            <marker date="1496721614000" expanded="true" signature="1934:2263" ph=" Forwards the request to another controller. ..." />
+            <marker date="1496721614000" expanded="true" signature="2356:2717" ph="{...}" />
+            <marker date="1496721614000" expanded="true" signature="2726:2951" ph=" Returns a RedirectResponse to the given URL. ..." />
+            <marker date="1496721614000" expanded="true" signature="3006:3070" ph="{...}" />
+            <marker date="1496721614000" expanded="true" signature="3079:3395" ph=" Returns a RedirectResponse to the given route with the given parameters. ..." />
+            <marker date="1496721614000" expanded="true" signature="3488:3582" ph="{...}" />
+            <marker date="1496721614000" expanded="true" signature="3591:3998" ph=" Returns a JsonResponse that uses the serializer component if enabled, or json_encode. ..." />
+            <marker date="1496721614000" expanded="true" signature="4090:4502" ph="{...}" />
+            <marker date="1496721614000" expanded="true" signature="4147:4435" ph="..." />
+            <marker date="1496721614000" expanded="true" signature="4215:4354" ph="..." />
+            <marker date="1496721614000" expanded="true" signature="4242:4353" ph="..." />
+            <marker date="1496721614000" expanded="true" signature="4248:4342" ph="..." />
+            <marker date="1496721614000" expanded="true" signature="4511:5007" ph=" Returns a BinaryFileResponse object with original or customized file name and disposition header. ..." />
+            <marker date="1496721614000" expanded="true" signature="5120:5336" ph="{...}" />
+            <marker date="1496721614000" expanded="true" signature="5345:5538" ph=" Adds a flash message to the current session for type. ..." />
+            <marker date="1496721614000" expanded="true" signature="5589:5844" ph="{...}" />
+            <marker date="1496721614000" expanded="true" signature="5644:5757" ph="..." />
+            <marker date="1496721614000" expanded="true" signature="5853:6138" ph=" Checks if the attributes are granted against the current authentication token and optionally supplied object. ..." />
+            <marker date="1496721614000" expanded="true" signature="6202:6502" ph="{...}" />
+            <marker date="1496721614000" expanded="true" signature="6280:6389" ph="..." />
+            <marker date="1496721614000" expanded="true" signature="6511:6870" ph=" Throws an exception unless the attributes are granted against the current authentication token and optionally ..." />
+            <marker date="1496721614000" expanded="true" signature="6977:7253" ph="{...}" />
+            <marker date="1496721614000" expanded="true" signature="7038:7246" ph="..." />
+            <marker date="1496721614000" expanded="true" signature="7262:7477" ph=" Returns a rendered view. ..." />
+            <marker date="1496721614000" expanded="true" signature="7549:7986" ph="{...}" />
+            <marker date="1496721614000" expanded="true" signature="7606:7699" ph="..." />
+            <marker date="1496721614000" expanded="true" signature="7747:7904" ph="..." />
+            <marker date="1496721614000" expanded="true" signature="7995:8264" ph=" Renders a view. ..." />
+            <marker date="1496721614000" expanded="true" signature="8359:8939" ph="{...}" />
+            <marker date="1496721614000" expanded="true" signature="8416:8528" ph="..." />
+            <marker date="1496721614000" expanded="true" signature="8576:8729" ph="..." />
+            <marker date="1496721614000" expanded="true" signature="8765:8814" ph="..." />
+            <marker date="1496721614000" expanded="true" signature="8948:9257" ph=" Streams a view. ..." />
+            <marker date="1496721614000" expanded="true" signature="9360:10214" ph="{...}" />
+            <marker date="1496721614000" expanded="true" signature="9417:9638" ph="..." />
+            <marker date="1496721614000" expanded="true" signature="9557:9627" ph="..." />
+            <marker date="1496721614000" expanded="true" signature="9680:9878" ph="..." />
+            <marker date="1496721614000" expanded="true" signature="9802:9867" ph="..." />
+            <marker date="1496721614000" expanded="true" signature="9886:10039" ph="..." />
+            <marker date="1496721614000" expanded="true" signature="10075:10136" ph="..." />
+            <marker date="1496721614000" expanded="true" signature="10223:10578" ph=" Returns a NotFoundHttpException. ..." />
+            <marker date="1496721614000" expanded="true" signature="10680:10755" ph="{...}" />
+            <marker date="1496721614000" expanded="true" signature="10764:11136" ph=" Returns an AccessDeniedException. ..." />
+            <marker date="1496721614000" expanded="true" signature="11247:11322" ph="{...}" />
+            <marker date="1496721614000" expanded="true" signature="11331:11630" ph=" Creates and returns a Form instance from the type of the form. ..." />
+            <marker date="1496721614000" expanded="true" signature="11713:11811" ph="{...}" />
+            <marker date="1496721614000" expanded="true" signature="11820:12028" ph=" Creates and returns a form builder instance. ..." />
+            <marker date="1496721614000" expanded="true" signature="12111:12226" ph="{...}" />
+            <marker date="1496721614000" expanded="true" signature="12235:12402" ph=" Shortcut to return the Doctrine Registry service. ..." />
+            <marker date="1496721614000" expanded="true" signature="12441:12664" ph="{...}" />
+            <marker date="1496721614000" expanded="true" signature="12497:12606" ph="..." />
+            <marker date="1496721614000" expanded="true" signature="12673:12876" ph=" Get a user from the Security Token Storage. ..." />
+            <marker date="1496721614000" expanded="true" signature="12911:13373" ph="{...}" />
+            <marker date="1496721614000" expanded="true" signature="12981:13090" ph="..." />
+            <marker date="1496721614000" expanded="true" signature="13185:13214" ph="..." />
+            <marker date="1496721614000" expanded="true" signature="13269:13343" ph="..." />
+            <marker date="1496721614000" expanded="true" signature="13382:13624" ph=" Checks the validity of a CSRF token. ..." />
+            <marker date="1496721614000" expanded="true" signature="13679:13976" ph="{...}" />
+            <marker date="1496721614000" expanded="true" signature="13754:13857" ph="..." />
+          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/AppBundle/Controller/GenusController.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="527">
-          <caret line="28" column="36" lean-forward="false" selection-start-line="28" selection-start-column="36" selection-end-line="28" selection-end-column="36" />
+        <state relative-caret-position="496">
+          <caret line="35" column="9" lean-forward="false" selection-start-line="35" selection-start-column="9" selection-end-line="35" selection-end-column="9" />
           <folding>
-            <element signature="e#124#183#0#PHP" expanded="true" />
-            <element signature="e#808#830#0#PHP" expanded="true" />
+            <marker date="1498759659000" expanded="false" signature="9:86" ph=" Created by PhpStorm. ..." />
+            <marker date="1498759659000" expanded="true" signature="128:289" ph="..." />
+            <marker date="1498759659000" expanded="true" signature="331:1136" ph="{...}" />
+            <marker date="1498759659000" expanded="true" signature="341:383" ph=" @Route(&quot;/genus/{genusName}&quot;) ..." />
+            <marker date="1498759659000" expanded="true" signature="428:1134" ph="{...}" />
+            <marker date="1498759659000" expanded="true" signature="443:778" ph="//..." />
+            <marker date="1498759659000" expanded="true" signature="797:942" ph="..." />
+            <marker date="1498759659000" expanded="true" signature="974:1068" ph="..." />
+            <marker date="1498759659000" expanded="true" signature="975:995" ph="genus/show" />
+            <marker date="1498759659000" expanded="true" signature="998:1067" ph="..." />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Resources/views/genus/show.html.twig">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="62">
+          <caret line="2" column="3" lean-forward="false" selection-start-line="2" selection-start-column="3" selection-end-line="2" selection-end-column="3" />
+          <folding />
         </state>
       </provider>
     </entry>
