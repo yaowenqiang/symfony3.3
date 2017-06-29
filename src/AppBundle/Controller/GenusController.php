@@ -22,11 +22,12 @@ class GenusController extends Controller
     {
         //octopus
         //make the var/cache directory excluded,because ths directory may make auto-completing not work correctly.
-        $templating = $this->container->get('templating');
-        $html = $templating->render('genus/show.html.twig',[
-            'name' => $genusName
-        ]);
-        return new Response($html);
+//        $templating = $this->container->get('templating');
+//        $html = $templating->render('genus/show.html.twig',[
+//            'name' => $genusName
+//        ]);
+//        return new Response($html);
+        return $this->render('genus/show.html.twig',['name'=>$genusName]);
 //        return new  Response("The Genus: ".$genusName);
     }
 }
