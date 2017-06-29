@@ -11,8 +11,9 @@ namespace AppBundle\Controller;
 
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
 use \Symfony\Component\HttpFoundation\Response;
+use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 
-class GenusController
+class GenusController extends Controller
 {
     /**
      * @Route("/genus/{genusName}")
@@ -20,6 +21,12 @@ class GenusController
     public function showAction($genusName)
     {
         //octopus
-        return new  Response("The Genus: ".$genusName);
+        //make the var/cache directory excluded,because ths directory may make auto-completing not work correctly.
+        $templating = $this->container->get('templating');
+        $html = $templating->render('genus/show.html.twig',[
+            'name' => $genusName
+        ]);
+        return new Response($html);
+//        return new  Response("The Genus: ".$genusName);
     }
 }
