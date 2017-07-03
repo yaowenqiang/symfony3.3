@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="131e9961-58df-48b4-a708-e01a61fcecd0" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Resources/views/genus/show.html.twig" afterPath="$PROJECT_DIR$/app/Resources/views/genus/show.html.twig" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/AppBundle/Controller/GenusController.php" afterPath="$PROJECT_DIR$/src/AppBundle/Controller/GenusController.php" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -333,8 +333,8 @@
         <state relative-caret-position="0">
           <caret line="0" column="30" lean-forward="false" selection-start-line="0" selection-start-column="30" selection-end-line="0" selection-end-column="30" />
           <folding>
-            <marker date="1498761168000" expanded="true" signature="0:3" ph="{% block title  ...%}" />
-            <marker date="1498761168000" expanded="true" signature="1281:1297" ph="{% block body ...%}" />
+            <marker date="1499101019000" expanded="true" signature="0:3" ph="{% block title  ...%}" />
+            <marker date="1499101019000" expanded="true" signature="1418:1434" ph="{% block body ...%}" />
           </folding>
         </state>
       </provider>
