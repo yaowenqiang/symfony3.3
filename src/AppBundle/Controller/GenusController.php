@@ -9,7 +9,10 @@
 namespace AppBundle\Controller;
 
 
+use Sensio\Bundle\FrameworkExtraBundle\Configuration\Method;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
+use Symfony\Component\DependencyInjection\ContainerInterface;
+use Symfony\Component\HttpFoundation\JsonResponse;
 use \Symfony\Component\HttpFoundation\Response;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 
@@ -37,5 +40,21 @@ class GenusController extends Controller
             'name'=>$genusName
         ]);
 //        return new  Response("The Genus: ".$genusName);
+    }
+
+    /**
+     * @Route("/genus/{genusName}/notes")
+     * @Method("GET")
+     */
+    public function getNotesAction()
+    {
+        $notes = [
+            ['id'=>1,'username'=>'AquaPelham','avatarUrl'=>'/images/leanna.jpeg','note'=>"Octopus asked me a riddle,outsmarted me",'date'=>"Dec,10,2012"]
+        ];
+        $data = [
+            'notes'=>$notes
+        ];
+//        return new Response(json_encode($data));
+        return new JsonResponse($data);
     }
 }
