@@ -50,6 +50,7 @@ class GenusController extends Controller
     {
         $notes = [
             ['id'=>1,'username'=>'AquaPelham','avatarUrl'=>'/images/leanna.jpeg','note'=>"Octopus asked me a riddle,outsmarted me",'date'=>"Dec,10,2012"]
+            ['id'=>2,'username'=>'AquaPelham','avatarUrl'=>'/images/leanna.jpeg','note'=>"a new note",'date'=>"Dec,10,2012"]
         ];
         $data = [
             'notes'=>$notes

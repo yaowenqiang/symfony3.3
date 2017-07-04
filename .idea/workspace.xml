@@ -333,8 +333,8 @@
         <state relative-caret-position="0">
           <caret line="0" column="30" lean-forward="false" selection-start-line="0" selection-start-column="30" selection-end-line="0" selection-end-column="30" />
           <folding>
-            <marker date="1499101019000" expanded="true" signature="0:3" ph="{% block title  ...%}" />
-            <marker date="1499101019000" expanded="true" signature="1418:1434" ph="{% block body ...%}" />
+            <marker date="1499101927000" expanded="true" signature="0:3" ph="{% block title  ...%}" />
+            <marker date="1499101927000" expanded="true" signature="1418:1472" ph="{% block body ...%}" />
           </folding>
         </state>
       </provider>
