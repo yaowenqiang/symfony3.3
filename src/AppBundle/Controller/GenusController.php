@@ -35,8 +35,14 @@ class GenusController extends Controller
             'I counted 8 legs...as they wrapped around me',
             'Inked!'
         ];
+        $funFact = "Octopuses can change the color of their body in just *three-tenths* of a second!";
+//        $funFact = $this->container->get('markdown.parser')
+//            ->transform($funFact);
+        $funFact = $this->get('markdown.parser')
+            ->transform($funFact);
         return $this->render('genus/show.html.twig',[
             'notes'=>$notes,
+            'funFact'=>$funFact,
             'name'=>$genusName
         ]);
 //        return new  Response("The Genus: ".$genusName);
@@ -50,7 +56,6 @@ class GenusController extends Controller
     {
         $notes = [
             ['id'=>1,'username'=>'AquaPelham','avatarUrl'=>'/images/leanna.jpeg','note'=>"Octopus asked me a riddle,outsmarted me",'date'=>"Dec,10,2012"]
-            ['id'=>2,'username'=>'AquaPelham','avatarUrl'=>'/images/leanna.jpeg','note'=>"a new note",'date'=>"Dec,10,2012"]
         ];
         $data = [
             'notes'=>$notes
