@@ -33,13 +33,15 @@ monolog:
         firephp:
             type: firephp
             level: info
-        chromephp:
-            type: chromephp
-            level: info
+        #chromephp:
+        #    type: chromephp
+        #    level: info
 
 #swiftmailer:
 #    delivery_addresses: ['me@example.com']
 doctrine_cache:
     providers:
         my_markdown_cache:
-            type: array
+            type: %cache_type%
+            file_system:
+                directory: %kernel.cache_dir%/markdown_cache
