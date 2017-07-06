@@ -9,7 +9,6 @@
 namespace AppBundle\Entity;
 
 use Doctrine\ORM\Mapping as ORM;
-use Doctrine\ORM\Mapping\ as ORM;
 
 /**
  * @ORM\Entity
@@ -27,6 +26,6 @@ class Genus
      * @ORM\Column(type="string")
      */
     private $name;
-    
+
 
 }
