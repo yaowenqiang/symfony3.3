@@ -15,9 +15,23 @@ use Symfony\Component\DependencyInjection\ContainerInterface;
 use Symfony\Component\HttpFoundation\JsonResponse;
 use \Symfony\Component\HttpFoundation\Response;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
+use AppBundle\Entity\Genus;
 
 class GenusController extends Controller
 {
+    /**
+     * @Route("/genus/new")
+     */
+    public function newAction()
+    {
+          $genus = new Genus();
+          $genus->setName('Octopus'.rand(1,100));
+
+          $em = $this->getDoctrine()->getManager();
+          $em->persist($genus);
+          $em->flush();
+          return new Response("<html><body>Genus Created</body></html>");
+    }
     /**
      * @Route("/genus/{genusName}")
      */
