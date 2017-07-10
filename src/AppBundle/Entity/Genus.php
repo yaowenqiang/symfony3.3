@@ -104,4 +104,9 @@ class Genus
     {
         $this->funFact = $funFact;
     }
+
+    public function getUpdatedAt()
+    {
+        return new \DateTime('-'.rand(0,100).' days');
+    }
 }
