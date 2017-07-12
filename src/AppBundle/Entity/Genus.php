@@ -44,7 +44,7 @@ class Genus
     /**
      * @ORM\Column(type="boolean")
      */
-    private $isPublished;
+    private $isPublished = true; # hae default value
 
     /**
      * @return mixed

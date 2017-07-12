@@ -44,6 +44,27 @@ class GenusNote
     private $createdAt;
 
     /**
+     * @ORM\ManyToOne(targetEntity="Genus")
+     */
+    private $Genus;
+
+    /**
+     * @return mixed
+     */
+    public function getGenus()
+    {
+        return $this->Genus;
+    }
+
+    /**
+     * @param mixed $Genus
+     */
+    public function setGenus(Genus $Genus)
+    {
+        $this->Genus = $Genus;
+    }
+
+    /**
      * @return mixed
      */
     public function getUsername()

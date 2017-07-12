@@ -9,6 +9,7 @@
 namespace AppBundle\Controller;
 
 
+use AppBundle\Entity\GenusNote;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Method;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
 use Symfony\Component\DependencyInjection\ContainerInterface;
@@ -26,11 +27,18 @@ class GenusController extends Controller
     {
           $genus = new Genus();
           $genus->setName('Octopus'.rand(1,100));
-          $genus->setSubFaminy('Octopodinae');
+          $genus->setSubFamily('Octopodinae');
           $genus->setSpeciesCount(rand(100,99999));
 
+          $genusNode = new GenusNote();
+          $genusNode->setUsername('AquaWeaver');
+          $genusNode->setUserAvatarFilename('ryan.jpeg');
+          $genusNode->setNote('I counted 8 legs...As they wrapped around me.');
+          $genusNode->setCreatedAt(new \DateTime('-1 month'));
+          $genusNode->setGenus($genus);
           $em = $this->getDoctrine()->getManager();
           $em->persist($genus);
+          $em->persist($genusNode);
           $em->flush();
           return new Response("<html><body>Genus Created</body></html>");
     }
