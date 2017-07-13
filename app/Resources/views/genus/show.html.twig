@@ -4,7 +4,7 @@
 
 {% block body %}
     {#<a href="/genus/{{ name }}/notes">Json Notes</a>#}
-    <a href="{{ path('genus_show_notes',{'genusName':genus.name}) }}">Json Notes</a>
+    <a href="{{ path('genus_show_notes',{'name':genus.name}) }}">Json Notes</a>
     <h2 class="genus-name">{{ genus.name }}</h2>
     <div class="sea-creature-container">
         <div class="genus-photo"></div>

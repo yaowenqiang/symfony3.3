@@ -108,10 +108,10 @@ class GenusController extends Controller
     }
 
     /**
-     * @Route("/genus/{genusName}/notes",name="genus_show_notes")
+     * @Route("/genus/{name}/notes",name="genus_show_notes")
      * @Method("GET")
      */
-    public function getNotesAction()
+    public function getNotesAction(Genus $genus)
     {
         $notes = [
             ['id'=>1,'username'=>'AquaPelham','avatarUrl'=>'/images/leanna.jpeg','note'=>"Octopus asked me a riddle,outsmarted me",'date'=>"Dec,10,2012"]
