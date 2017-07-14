@@ -113,9 +113,9 @@ class GenusController extends Controller
      */
     public function getNotesAction(Genus $genus)
     {
-        $notes = [
-            ['id'=>1,'username'=>'AquaPelham','avatarUrl'=>'/images/leanna.jpeg','note'=>"Octopus asked me a riddle,outsmarted me",'date'=>"Dec,10,2012"]
-        ];
+        foreach ($genus->getNotes() as $note) {
+            dump($note);
+        }
         $data = [
             'notes'=>$notes
         ];
