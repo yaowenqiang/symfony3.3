@@ -98,11 +98,16 @@ class GenusController extends Controller
 //        }
 //        $funFact = $this->container->get('markdown.parser')
 //            ->transform($funFact);
+        $recentNotes = $genus->getNotes()
+            ->filter(function (GenusNote $note){
+                return $note->getCreatedAt() > new \dateTime('-3 months') ;
+            });
         return $this->render('genus/show.html.twig',[
             'notes'=>$notes,
 //            'funFact'=>$funFact,
 //            'name'=>$genusName
-            'genus'=>$genus
+            'genus'=>$genus,
+            'recentNoteCount'=>count($recentNotes)
         ]);
 //        return new  Response("The Genus: ".$genusName);
     }
@@ -114,7 +119,7 @@ class GenusController extends Controller
     public function getNotesAction(Genus $genus)
     {
         $notes = [];
-        $notes = $genus->getNotes());
+        $notes = $genus->getNotes();
         foreach ($genus->getNotes() as $note) {
             $notes[] = [
                 'id'=>$note->getId(),
