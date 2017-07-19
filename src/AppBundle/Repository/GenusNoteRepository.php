@@ -17,7 +17,7 @@ class GenusNoteRepository extends EntityRepository
     public function findAllRecentNotesForGenus(Genus $genus)
     {
         return $this->createQueryBuilder('genus_note')
-            ->andWhere('genus_note.Genus = :genus')
+            ->andWhere('genus_note.genus = :genus')
             ->setParameter('genus',$genus)
             ->andWhere('genus_note.createdAt > :recentDate')
             ->setParameter('recentDate',new \Datetime('-3 months'))

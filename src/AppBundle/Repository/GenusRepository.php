@@ -16,12 +16,15 @@ class GenusRepository extends EntityRepository
     /*
      * @return Genus[]
      */
-    public function findAllPublishedOrderBySize()
+//    public function findAllPublishedOrderBySize()
+    public function findAllPublishedOrderByRecentlyActive()
     {
        return $this->createQueryBuilder('genus')
-           ->where('genus.isPublished = :isPublished')
+           ->andWhere('genus.isPublished = :isPublished')
            ->setParameter('isPublished',true)
-           ->orderBy('genus.speciesCount','DESC')
+//           ->orderBy('genus.speciesCount','DESC')
+           ->leftJoin('genus.notes','genus_note')
+           ->orderBy('genus_note.createdAt','DESC')
            ->getQuery()
            ->execute();
 //           ->getOneOrNullResult();

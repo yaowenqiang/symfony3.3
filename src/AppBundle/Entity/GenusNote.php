@@ -47,22 +47,22 @@ class GenusNote
      * @ORM\ManyToOne(targetEntity="Genus",inversedBy="notes")
      * @ORM\JoinColumn(nullable=false)
      */
-    private $Genus;
+    private $genus;
 
     /**
      * @return mixed
      */
     public function getGenus()
     {
-        return $this->Genus;
+        return $this->genus;
     }
 
     /**
-     * @param mixed $Genus
+     * @param mixed $genus
      */
     public function setGenus(Genus $Genus)
     {
-        $this->Genus = $Genus;
+        $this->genus = $Genus;
     }
 
     /**
