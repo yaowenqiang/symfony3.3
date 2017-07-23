@@ -6,11 +6,24 @@
  * Time: 上午10:17
  */
 
-namespace AppBundle\Service\Twig;
+namespace AppBundle\Twig;
 
+
+use AppBundle\Service\MarkdownTransformer;
 
 class MarkdownExtension extends \Twig_Extension
 {
+    /**
+     * @var MarkdownTransformer
+     */
+    private $markdownTransformer;
+
+    public function  __construct(MarkdownTransformer $markdownTransformer)
+    {
+
+        $this->markdownTransformer = $markdownTransformer;
+    }
+
     public function getFilters()
     {
         return [
@@ -20,7 +33,8 @@ class MarkdownExtension extends \Twig_Extension
 
     public function parseMarkdown($str)
     {
-        return strtolower($str);
+        return $this->markdownTransformer->parse($str);
+//        return strtolower($str);
     }
 
     public function getName()
