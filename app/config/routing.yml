@@ -6,6 +6,9 @@ my:
 app:
     resource: '@AppBundle/Controller/'
     type: annotation
+app_api:
+    resource: '@AppBundle/Controller/Api'
+    type: annotation
 homepage:
     path: /
     defaults:
