@@ -4,6 +4,8 @@
 namespace AppBundle\Controller\Api;
 
 
+use AppBundle\Entity\Programmer;
+use AppBundle\Form\ProgrammerType;
 use Symfony\Component\HttpFoundation\Request;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Method;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
@@ -20,14 +22,19 @@ class ProgrammerController extends Controller
     {
         $body = $request->getContent();
         $data = json_decode($body, true);
-        $programmer = new Programmer([$data['nickname'], $data['avavtarNumber']]);
-        $programmer->setTagLin($data['tagLine']);
-        $programmer->setUser($this->findUserByusername(['weareryyan']));
-        $em = $this->getDoctrine()->getManager();
-        $em->persist($programmer);
-        $em->flush();
+        $programmer = new Programmer();
+        $form = $this->createForm(ProgrammerType::class, $programmer,[
+            'csrf_protection'=>false
+        ]);
+        $form->submit($data);
+//        $programmer->setUser($this->findUserByusername(['weareryyan']));
+//        $em = $this->getDoctrine()->getManager();
+//        $em->persist($programmer);
+//        $em->flush();
 
-        return new Response('It worked, Believe me I am an API');
+        $response =  new Response('It worked, Believe me I am an API', 201);
+        $response->headers->set('Location', "/some/programmer");
+        return $response;
     }
 
 }
