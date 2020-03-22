@@ -40,9 +40,9 @@ services:
         public: true
         autowire: true
 
-    app.markdown_extension:
-        class: AppBundle\Twig\MarkdownExtension
-        tags:
-            - { name: twig.extension}
-        autowire: true
+#    app.markdown_extension:
+#        class: AppBundle\Twig\MarkdownExtension
+#        tags:
+#            - { name: twig.extension}
+#        autowire: true
 #        arguments: ['@app.markdown_transformer']

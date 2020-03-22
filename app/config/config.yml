@@ -81,7 +81,7 @@ doctrine_cache:
             file_system:
                 directory: /tmp/doctrine_cache
 
-enqueue:
-    transport:
-        default: "amqp:"
-    client: ~
+#enqueue:
+#    transport:
+#        default: "amqp:"
+#    client: ~
