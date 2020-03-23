@@ -6,6 +6,8 @@ namespace AppBundle\Controller\Api;
 
 use AppBundle\Entity\Programmer;
 use AppBundle\Form\ProgrammerType;
+use JMS\Serializer\SerializationContext;
+use Symfony\Component\HttpFoundation\JsonResponse;
 use Symfony\Component\HttpFoundation\Request;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Method;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
@@ -31,10 +33,22 @@ class ProgrammerController extends Controller
 //        $em = $this->getDoctrine()->getManager();
 //        $em->persist($programmer);
 //        $em->flush();
+        $programmer->setAvatarNumber(1);
+        $programmer->setNickname('my name');
+        $programmer->setNickname((null));
+        $json = $this->serialize($programmer);
 
-        $response =  new Response('It worked, Believe me I am an API', 201);
+        $response =  new Response($json, 201);
         $response->headers->set('Location', "/some/programmer");
         return $response;
+    }
+
+    public function serialize($data)
+    {
+        $context = new SerializationContext();
+        $context->setSerializeNull(true);
+        return $this->container->get('jms_serializer')
+            ->serialize($data, 'json', $context);
     }
 
 }

@@ -40,9 +40,14 @@ services:
         public: true
         autowire: true
 
+
 #    app.markdown_extension:
 #        class: AppBundle\Twig\MarkdownExtension
 #        tags:
 #            - { name: twig.extension}
 #        autowire: true
 #        arguments: ['@app.markdown_transformer']
+    jms_serializer.serialized_name_annotation_strategy:
+        class: JMS\Serializer\Naming\SerializedNameAnnotationStrategy
+        arguments:
+            - '@jms_serializer.identical_property_naming_strategy'

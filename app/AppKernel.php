@@ -20,6 +20,8 @@ class AppKernel extends Kernel
             new Doctrine\Bundle\MigrationsBundle\DoctrineMigrationsBundle(),
             new AppBundle\AppBundle(),
             new MyBundle\MyBundle(),
+            new JMS\SerializerBundle\JMSSerializerBundle(),
+
 //            new Enqueue\Bundle\EnqueueBundle(),
 
         ];

@@ -3,10 +3,11 @@
 namespace AppBundle\Entity;
 
 use Doctrine\ORM\Mapping as ORM;
+use JMS\Serializer\Annotation as Serializer;
 
 /**
  * Programmer
- *
+ * @Serializer\ExclusionPolicy("all")
  * @ORM\Table(name="programmer")
  * @ORM\Entity(repositoryClass="AppBundle\Repository\ProgrammerRepository")
  */
@@ -23,6 +24,7 @@ class Programmer
 
     /**
      * @var string
+     * @Serializer\Expose()
      *
      * @ORM\Column(name="nickname", type="string", length=255)
      */
@@ -31,6 +33,7 @@ class Programmer
     /**
      * @var string
      *
+     * @Serializer\Expose()
      * @ORM\Column(name="avatarNumber", type="string", length=255)
      */
     private $avatarNumber;
