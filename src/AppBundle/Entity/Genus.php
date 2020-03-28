@@ -78,9 +78,16 @@ class Genus
      */
     private $notes;
 
+    /**
+     * @ORM\ManyToMany(targetEntity="AppBundle\Entity\user")
+     * @ORM\JoinTable(name="genus_scientist")
+     */
+    private $genusScientist;
+
     public function __construct()
     {
         $this->notes = new ArrayCollection();
+        $this->genusScientist = new ArrayCollection();
     }
 
     /**
@@ -175,4 +182,21 @@ class Genus
     {
         return $this->notes;
     }
+
+    public function addGenusScientist(User $user)
+    {
+        if ($this->genusScientist->contains($user)) {
+            return;
+        }
+        $this->genusScientist[] = $user;
+    }
+
+    /**
+     * @return ArrayCollection|User[]
+     */
+    public function getGenusScientist()
+    {
+        return $this->genusScientist;
+    }
+
 }

@@ -10,6 +10,7 @@ namespace AppBundle\Controller;
 
 
 use AppBundle\Entity\GenusNote;
+use AppBundle\Entity\user;
 use AppBundle\Service\MarkdownTransformer;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Method;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
@@ -47,15 +48,23 @@ class GenusController extends Controller
         $genus->setSubFamily('Octopodinae');
         $genus->setSpeciesCount(rand(100, 99999));
 
-        $genusNode = new GenusNote();
-        $genusNode->setUsername('AquaWeaver');
-        $genusNode->setUserAvatarFilename('ryan.jpeg');
-        $genusNode->setNote('I counted 8 legs...As they wrapped around me.');
-        $genusNode->setCreatedAt(new \DateTime('-1 month'));
-        $genusNode->setGenus($genus);
+        $genusNote = new GenusNote();
+        $genusNote->setUsername('AquaWeaver');
+        $genusNote->setUserAvatarFilename('ryan.jpeg');
+        $genusNote->setNote('I counted 8 legs...As they wrapped around me.');
+        $genusNote->setCreatedAt(new \DateTime('-1 month'));
+        $genusNote->setGenus($genus);
         $em = $this->getDoctrine()->getManager();
+        $user = $em->getRepository(user::class)
+            ->findOneBy([
+                'email' => 'aquanaut+1@163.com'
+            ]);
+
+        $genus->addGenusScientist($user);
+        $genus->addGenusScientist($user);
+
         $em->persist($genus);
-        $em->persist($genusNode);
+        $em->persist($genusNote);
         $em->flush();
         return new Response("<html><body>Genus Created</body></html>");
     }
@@ -157,6 +166,16 @@ class GenusController extends Controller
         ];
 //        return new Response(json_encode($data));
         return new JsonResponse($data);
+    }
+
+    /**
+     * @Route("/users/{id}", name="user_show")
+     */
+    public function showUserAction(User $user)
+    {
+        return $this->render('user/show', [
+            'user'=>$user
+        ]);
     }
 
 

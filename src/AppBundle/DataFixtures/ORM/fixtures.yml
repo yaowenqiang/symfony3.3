@@ -13,3 +13,20 @@ AppBundle\Entity\GenusNote:
         note: <paragraph()>
         createdAt: <dateTimeBetween('-6 months','now')>
         genus: '@genus_*'
+
+AppBundle\Entity\User:
+    user_{1..10}:
+      email: jacky.yao+<current()>@163.com
+      plainPassword: iliketurtles
+      roles: ['ROLE_ADMIN']
+      avatarUri: <imageUrl(100,100, 'abstract')>
+
+    user_aquanaut_{1..10}:
+      email: aquanaut+<current()>@163.com
+      plainPassword: aquanaut
+      isScientist: true
+      firstname: <firstName()>
+      lastName: <lastName()>
+      universityName: <company()> University
+      avatarUri: <imageUrl(100,100, 'abstract')>
+
