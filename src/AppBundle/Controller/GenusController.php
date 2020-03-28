@@ -189,4 +189,33 @@ class GenusController extends Controller
         ]);
     }
 
+
+    /**
+     * @Route("/genus/{genusId}/scientist/{userId}", name="genus_scientist_remove")
+     * @Method("DELETE")
+     */
+    public function removeGenusScientistAction($genusId, $userId)
+    {
+        $em = $this->getDoctrine()->getManager();
+        /** @var Genus $genus */
+        $genus = $em->getRepository(Genus::class)
+            ->find($genusId);
+        if (!$genus) {
+            throw $this->createNotFoundException('genus not found');
+        }
+
+        $genusScientist = $em->getRepository(user::class)
+            ->find($userId);
+        if (!$genusScientist) {
+            throw $this->createNotFoundException('genus scientist not found');
+        }
+
+        $genus->removeGenusScientist($genusScientist);
+        $em->persist($genus);
+        $em->flush();
+
+        return new Response(null, 200);
+
+    }
+
 }

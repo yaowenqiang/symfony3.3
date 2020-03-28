@@ -199,4 +199,17 @@ class Genus
         return $this->genusScientist;
     }
 
+    /**
+     * @return mixed
+     */
+    public function getId()
+    {
+        return $this->id;
+    }
+
+
+    public function removeGenusScientist(User $user)
+    {
+        $this->genusScientist->removeElement($user);
+    }
 }
