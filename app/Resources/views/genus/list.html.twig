@@ -5,6 +5,7 @@
         <tr>
             <td>Genus</td>
             <td># of species</td>
+            <td># of scientists</td>
             <td>Last Updated</td>
         </tr>
         </thead>
@@ -19,6 +20,7 @@
                         </a>
                     </td>
                     <td>{{ genus.speciesCount }}</td>
+                    <td>{{ genus.genusScientist|length }}</td>
                     <td>{{ genus.updatedAt|date('Y-m-d') }}</td>
                 </tr>
             {% endfor %}
