@@ -5,6 +5,8 @@ AppBundle\Entity\Genus:
         speciesCount: <numberBetween(100,100000)>
         funFact: <sentence()>
         isPublished: <boolean(75)>
+#        genusScientist:  ["@user_aquanaut_1", "@user_aquanaut_5"]
+        genusScientist:  "3x @user_aquanaut_*"
 
 AppBundle\Entity\GenusNote:
     genus.note_{1..10}:
