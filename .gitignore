@@ -17,3 +17,7 @@
 /web/bundles/
 web/phpinfo.php
 web/php_errors.log
+php_errors.log
+web/apc.php
+apc.php
+var

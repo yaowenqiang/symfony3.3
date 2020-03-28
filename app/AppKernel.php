@@ -21,6 +21,7 @@ class AppKernel extends Kernel
             new AppBundle\AppBundle(),
             new MyBundle\MyBundle(),
             new JMS\SerializerBundle\JMSSerializerBundle(),
+            new Stof\DoctrineExtensionsBundle\StofDoctrineExtensionsBundle(),
 
 //            new Enqueue\Bundle\EnqueueBundle(),
 

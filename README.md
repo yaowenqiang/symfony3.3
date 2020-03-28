@@ -16,3 +16,5 @@ A Symfony project created on June 27, 2017, 6:39 pm.
 > composer require --dev doctrine/doctrine-fixtures-bundle nelmio/alice
 >
 >php bin/console doctrine:fixtures:load
+>
+> composer require stof/doctrine-extensions-bundle

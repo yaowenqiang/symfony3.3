@@ -80,9 +80,9 @@ class GenusController extends Controller
     }
 
     /**
-     * @Route("/genus/{genusName}",name="genus_show")
+     * @Route("/genus/{slug}",name="genus_show")
      */
-    public function showAction($genusName)
+    public function showAction(genus $genus)
     {
         //octopus
         //make the var/cache directory excluded,because ths directory may make auto-completing not work correctly.
@@ -91,6 +91,8 @@ class GenusController extends Controller
 //            'name' => $genusName
 //        ]);
 //        return new Response($html);
+        $this->get('logger')
+            ->info('Showing genus: ' . $genus->getName());
         $notes = [
             "Octopus asked me a riddle,outsmarted me",
             'I counted 8 legs...as they wrapped around me',
@@ -98,11 +100,11 @@ class GenusController extends Controller
         ];
         $funFact = "Octopuses can change the color of their body in just *three-tenths* of a second!";
         $em = $this->getDoctrine()->getManager();
-        $genus = $em->getRepository('AppBundle:Genus')
-            ->findOneBy(['name' => $genusName]);
-        if (!$genus) {
-            throw $this->createNotFoundException("No genus found!");
-        }
+//        $genus = $em->getRepository('AppBundle:Genus')
+//            ->findOneBy(['name' => $genusName]);
+//        if (!$genus) {
+//            throw $this->createNotFoundException("No genus found!");
+//        }
 //        $transformer = new MarkdownTransformer(
 //            $this->get('markdown.parser')
 //        );

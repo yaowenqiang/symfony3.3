@@ -84,7 +84,11 @@ doctrine_cache:
             type: %cache_type%
             file_system:
                 directory: /tmp/doctrine_cache
-
+stof_doctrine_extensions:
+    default_locale: en_US
+    orm:
+        default:
+            sluggable: true
 #enqueue:
 #    transport:
 #        default: "amqp:"
