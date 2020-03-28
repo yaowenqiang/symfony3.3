@@ -13,3 +13,6 @@ A Symfony project created on June 27, 2017, 6:39 pm.
 > php bin/console doctrine:schema:update --force
 
 > php bin/console doctrine:database:drop --force
+> composer require --dev doctrine/doctrine-fixtures-bundle nelmio/alice
+>
+>php bin/console doctrine:fixtures:load
