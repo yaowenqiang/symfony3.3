@@ -18,30 +18,46 @@ use Symfony\Component\HttpFoundation\JsonResponse;
 use \Symfony\Component\HttpFoundation\Response;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use AppBundle\Entity\Genus;
+use Symfony\Component\HttpFoundation\Tests\DefaultResponse;
 
 class GenusController extends Controller
 {
+    /**
+     * @Route("/create", name="create")
+     */
+    public function createNewAction()
+    {
+        $genus = new Genus();
+        $genus->setName("Octopus" . rand(1,100));
+        $genus->setSubFamily("null");
+        $genus->setSpeciesCount(1);
+        $em = $this->getDoctrine()->getManager();
+        $em->persist($genus);
+        $em->flush();
+        return new Response("<html><body>Genus created!</body></html>");
+    }
+
     /**
      * @Route("/genus/new")
      */
     public function newAction()
     {
-          $genus = new Genus();
-          $genus->setName('Octopus'.rand(1,100));
-          $genus->setSubFamily('Octopodinae');
-          $genus->setSpeciesCount(rand(100,99999));
+        $genus = new Genus();
+        $genus->setName('Octopus' . rand(1, 100));
+        $genus->setSubFamily('Octopodinae');
+        $genus->setSpeciesCount(rand(100, 99999));
 
-          $genusNode = new GenusNote();
-          $genusNode->setUsername('AquaWeaver');
-          $genusNode->setUserAvatarFilename('ryan.jpeg');
-          $genusNode->setNote('I counted 8 legs...As they wrapped around me.');
-          $genusNode->setCreatedAt(new \DateTime('-1 month'));
-          $genusNode->setGenus($genus);
-          $em = $this->getDoctrine()->getManager();
-          $em->persist($genus);
-          $em->persist($genusNode);
-          $em->flush();
-          return new Response("<html><body>Genus Created</body></html>");
+        $genusNode = new GenusNote();
+        $genusNode->setUsername('AquaWeaver');
+        $genusNode->setUserAvatarFilename('ryan.jpeg');
+        $genusNode->setNote('I counted 8 legs...As they wrapped around me.');
+        $genusNode->setCreatedAt(new \DateTime('-1 month'));
+        $genusNode->setGenus($genus);
+        $em = $this->getDoctrine()->getManager();
+        $em->persist($genus);
+        $em->persist($genusNode);
+        $em->flush();
+        return new Response("<html><body>Genus Created</body></html>");
     }
 
     /**
@@ -49,19 +65,20 @@ class GenusController extends Controller
      */
     public function listAction()
     {
-          $em = $this->getDoctrine()->getManager();
+        $em = $this->getDoctrine()->getManager();
 //          $genus = $em->getRepository('AppBundle\Entity\Genus')
 //              ->findAll();
         dump($em->getRepository('AppBundle:Genus'));
         $genuses = $em->getRepository('AppBundle:Genus')
 //            ->findAll();
-                ->findAllPublishedOrderByRecentlyActive();
+            ->findAllPublishedOrderByRecentlyActive();
 //          dump($genuses);exit;
-        return $this->render('genus/list.html.twig',[
-            'genuses'=>$genuses
+        return $this->render('genus/list.html.twig', [
+            'genuses' => $genuses
         ]);
 
     }
+
     /**
      * @Route("/genus/{genusName}",name="genus_show")
      */
@@ -81,9 +98,9 @@ class GenusController extends Controller
         ];
         $funFact = "Octopuses can change the color of their body in just *three-tenths* of a second!";
         $em = $this->getDoctrine()->getManager();
-        $genus = $em-> getRepository('AppBundle:Genus')
-            ->findOneBy(['name'=>$genusName]);
-        if(!$genus) {
+        $genus = $em->getRepository('AppBundle:Genus')
+            ->findOneBy(['name' => $genusName]);
+        if (!$genus) {
             throw $this->createNotFoundException("No genus found!");
         }
 //        $transformer = new MarkdownTransformer(
@@ -106,12 +123,12 @@ class GenusController extends Controller
 //            ->transform($funFact);
         $recentNotes = $em->getRepository('AppBundle:GenusNote')
             ->findAllRecentNotesForGenus($genus);
-        return $this->render('genus/show.html.twig',[
-            'notes'=>$notes,
-            'funFact'=>$funFact,
+        return $this->render('genus/show.html.twig', [
+            'notes' => $notes,
+            'funFact' => $funFact,
 //            'name'=>$genusName
-            'genus'=>$genus,
-            'recentNoteCount'=>count($recentNotes)
+            'genus' => $genus,
+            'recentNoteCount' => count($recentNotes)
         ]);
 //        return new  Response("The Genus: ".$genusName);
     }
@@ -126,17 +143,19 @@ class GenusController extends Controller
         $notes = $genus->getNotes();
         foreach ($genus->getNotes() as $note) {
             $notes[] = [
-                'id'=>$note->getId(),
-                'username'=>$note->getUsername(),
-                'avagarUrI'=>$note->getUserAvatarFilename(),
-                'note'=>$note->getNote(),
-                'date'=>$note->getCreatedAt()->format('M d,Y')
+                'id' => $note->getId(),
+                'username' => $note->getUsername(),
+                'avagarUrI' => $note->getUserAvatarFilename(),
+                'note' => $note->getNote(),
+                'date' => $note->getCreatedAt()->format('M d,Y')
             ];
         }
         $data = [
-            'notes'=>$notes
+            'notes' => $notes
         ];
 //        return new Response(json_encode($data));
         return new JsonResponse($data);
     }
+
+
 }
