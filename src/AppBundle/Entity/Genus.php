@@ -79,7 +79,7 @@ class Genus
     private $notes;
 
     /**
-     * @ORM\ManyToMany(targetEntity="AppBundle\Entity\user")
+     * @ORM\ManyToMany(targetEntity="AppBundle\Entity\user", inversedBy="studiedGenuses")
      * @ORM\JoinTable(name="genus_scientist")
      */
     private $genusScientist;

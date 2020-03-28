@@ -2,6 +2,7 @@
 
 namespace AppBundle\Entity;
 
+use Doctrine\Common\Collections\ArrayCollection;
 use Doctrine\ORM\Mapping as ORM;
 
 /**
@@ -12,6 +13,8 @@ use Doctrine\ORM\Mapping as ORM;
  */
 class user
 {
+
+
     /**
      * @var int
      *
@@ -76,6 +79,28 @@ class user
      * @ORM\Column(name="avataruri", type="string", length=255)
      */
     private $avataruri;
+
+    /**
+     * @ORM\ManyToMany(targetEntity="AppBundle\Entity\Genus" , mappedBy="genusScientist")
+     * @ORM\OrderBy({"name"= "ASC"})
+     */
+    private $studiedGenuses;
+
+    /**
+     * user constructor.
+     */
+    public function __construct()
+    {
+        $this->studiedGenuses = new ArrayCollection();
+    }
+
+    /**
+     * @return ArrayCollection|Genus[]
+     */
+    public function getStudiedGenuses()
+    {
+        return $this->studiedGenuses;
+    }
 
 
     /**

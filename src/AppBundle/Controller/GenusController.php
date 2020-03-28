@@ -173,10 +173,20 @@ class GenusController extends Controller
      */
     public function showUserAction(User $user)
     {
-        return $this->render('user/show', [
+        return $this->render('user/show.html.twig', [
             'user'=>$user
         ]);
     }
 
+    /**
+     * @Route("/user/edit/id}", name="user_edit")
+     */
+    public function usereditAction(User $user)
+    {
+
+        return $this->render('user/edit.html.twig', [
+            'user'=>$user
+        ]);
+    }
 
 }
